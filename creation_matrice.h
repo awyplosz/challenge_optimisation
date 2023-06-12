@@ -6,8 +6,9 @@ typedef struct {
     int colonne;
 } Element;
 
-int nb_ligne, nb_colonne;
+extern volatile int nb_ligne, nb_colonne;
+
 
 int** lireFichier(const char* nomFichier);
 
-int** matrice_creation(const char* fichier);
+void affichage_matrice(int** matrice);

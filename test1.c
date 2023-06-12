@@ -5,11 +5,12 @@
 
 int main (){
 
+    const char* fichier = "gr6.txt";
+    int** matrice;
 
-    const char* fichier = "gr1.txt";
+        matrice = lireFichier(fichier);
 
-    creation_matrice(fichier);
-    
+        affichage_matrice(matrice);
 
     return 0;
 }
