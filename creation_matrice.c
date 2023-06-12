@@ -3,7 +3,7 @@
 #include <string.h>
 #include "creation_matrice.h"
 
-
+volatile int nb_ligne,nb_colonne ;
 
 
 int** lireFichier(const char* nomFichier) {
@@ -15,6 +15,7 @@ int** lireFichier(const char* nomFichier) {
     int **matrice_fichier;
     int test_nom;
     Element element;
+    
 
     fscanf(fichier, "%s %d %s %d", element.nom_ligne, &nb_ligne, element.nom_colonne, &nb_colonne);
 
@@ -44,10 +45,7 @@ int** lireFichier(const char* nomFichier) {
     
 }
 
-int** creation_matrice(const char* nom_fichier) {
-    int** matrice;
-
-    matrice = lireFichier(nom_fichier);
+void affichage_matrice(int** matrice) {
 
     // Afficher la matrice pour vérification
     for (int i = 0; i < nb_ligne; i++) {
@@ -56,5 +54,4 @@ int** creation_matrice(const char* nom_fichier) {
         printf(" %d ", matrice[i][j]);
     }
 
-    return creation_matrice;
 }
