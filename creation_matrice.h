@@ -1,22 +1,13 @@
-#define MAX_GRID_SIZE 100
-
 typedef struct {
-    int row;
-    int col;
-} Cell;
+    char nom[50];
+    char nom_colonne[10];
+    char nom_ligne[10];
+    int ligne;
+    int colonne;
+} Element;
 
-typedef struct {
-    int rows;
-    int cols;
-    Cell targets[MAX_GRID_SIZE];
-    Cell obstacles[MAX_GRID_SIZE];
-    int numTargets;
-    int numObstacles;
-} Instance;
+int nb_ligne, nb_colonne;
 
-typedef struct {
-    char teamName[50];
-    int instanceNum;
-    Cell guards[MAX_GRID_SIZE];
-    int numGuards;
-} Solution;
+int** lireFichier(const char* nomFichier);
+
+int** matrice_creation(const char* fichier);
